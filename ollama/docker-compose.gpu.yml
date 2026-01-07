@@ -5,6 +5,7 @@ version: '3.8'
 
 services:
   ollama:
+    runtime: nvidia
     deploy:
       resources:
         reservations:
@@ -14,3 +15,4 @@ services:
               capabilities: [gpu]
     environment:
       - CUDA_VISIBLE_DEVICES=0  # GPU device ID(s), comma-separated for multiple
+      - NVIDIA_VISIBLE_DEVICES=all
