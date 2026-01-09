@@ -23,6 +23,13 @@ This is a mono repo with DevOps packages for multiple Colav services.
 - **GPU Support:** ✅ NVIDIA CUDA for faster inference
 - **Documentation:** [ollama/README.md](ollama/README.md)
 
+### ⚡ Redis (NEW)
+- **Version:** 8.4.0
+- **Features:** In-memory data store, caching, pub/sub, persistence
+- **Location:** `redis/`
+- **Use Cases:** Caching, session management, rate limiting, real-time analytics
+- **Documentation:** [redis/README.md](redis/README.md)
+
 ### 🔍 Elasticsearch
 - **Location:** `elasticsaerch/`
 - **Documentation:** [elasticsaerch/README.md](elasticsaerch/README.md)

@@ -12,7 +12,7 @@ services:
       - bootstrap.memory_lock=true
       - "OPENSEARCH_JAVA_OPTS=-Xms${HEAP_SIZE:-512m} -Xmx${HEAP_SIZE:-512m} -Xss2m"
       - OPENSEARCH_INITIAL_ADMIN_PASSWORD=${OPENSEARCH_PASSWORD:-Admin@123}
-      - plugins.security.disabled=${SECURITY_DISABLED:-false}
+      - plugins.security.disabled=true
       # GPU Configuration (only used when ENABLE_GPU=true)
       - PYTORCH_VERSION=${PYTORCH_VERSION:-1.12.1}
     ulimits:
@@ -50,7 +50,7 @@ services:
       - bootstrap.memory_lock=true
       - "OPENSEARCH_JAVA_OPTS=-Xms${HEAP_SIZE:-512m} -Xmx${HEAP_SIZE:-512m} -Xss2m"
       - OPENSEARCH_INITIAL_ADMIN_PASSWORD=${OPENSEARCH_PASSWORD:-Admin@123}
-      - plugins.security.disabled=${SECURITY_DISABLED:-false}
+      - plugins.security.disabled=true
       # GPU Configuration (only used when ENABLE_GPU=true)
       - PYTORCH_VERSION=${PYTORCH_VERSION:-1.12.1}
     ulimits:
@@ -82,8 +82,8 @@ services:
     expose:
       - "5601"
     environment:
-      - OPENSEARCH_HOSTS=["https://opensearch-node1:9200","https://opensearch-node2:9200"]
-      - DISABLE_SECURITY_DASHBOARDS_PLUGIN=${SECURITY_DISABLED:-false}
+      - OPENSEARCH_HOSTS=["http://opensearch-node1:9200","http://opensearch-node2:9200"]
+      - DISABLE_SECURITY_DASHBOARDS_PLUGIN=true
     networks:
       - opensearch-net
     depends_on:
